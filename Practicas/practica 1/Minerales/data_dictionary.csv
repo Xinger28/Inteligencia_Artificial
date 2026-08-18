@@ -1,0 +1,20 @@
+column,type,description
+year,int,Year (2015-2026)
+mineral,string,Critical mineral / rare-earth element
+country,string,Producing country
+is_rare_earth,int,1 if a rare-earth element
+end_use,string,"Primary end use (battery, magnet, semiconductor, catalyst, ...)"
+mine_production_tonnes,float,Simulated mine production (metric tonnes)
+production_share_pct,float,Country share of that mineral world production that year (%)
+reserves_tonnes,float,Simulated reserves (metric tonnes)
+years_of_reserves,float,Reserves / annual production (years of supply)
+refined_share_pct,float,Country share of refining/processing (%) — more concentrated than mining
+price_usd_per_tonne,float,"Simulated mineral price (USD/tonne), realistic time path"
+demand_growth_pct,float,Annual demand growth for the end-use segment (%)
+export_control_active,int,1 if the country had export controls on this mineral that year
+hhi,float,Herfindahl-Hirschman index of production concentration (mineral-year)
+top_country_share_pct,float,Largest producer share for that mineral-year (%)
+supply_risk_score,float,COMPUTED analytical supply-risk index (0-100) from concentration/geopolitics/controls
+high_supply_risk,int,"1 if supply_risk_score in top 30% (analytical label, derived)"
+disruption,int,1 if a supply disruption occurred that year (control onset / share collapse / price spike)
+disruption_next_year,float,ML TARGET (forward-looking): 1 if disruption occurs next year; NaN for 2026
